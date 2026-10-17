@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  copilot:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: flytbase_asset_copilot
+    ports:
+      - "8000:8000"
+    environment:
+      - PORT=8000
+      - GEMINI_API_KEY=${GEMINI_API_KEY:-}
+      - OPENROUTER_API_KEY=${OPENROUTER_API_KEY:-}
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/dashboard"]
+      interval: 30s
+      timeout: 5s
+      retries: 3

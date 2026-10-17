@@ -1,6 +1,36 @@
 # Organizer-only prototype, not part of the participant repo
 prototype/
 
+# Environment and secrets
+.env
+.env.*
+*.env
+
+# Python bytecode and virtual environments
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+
+# Databases
+*.db
+*.sqlite
+*.sqlite3
+
+# Frontend dependencies and builds
+node_modules/
+dist/
+
 # OS files
 .DS_Store
 Thumbs.db
+
+# Internal Submission Writeups, Scripts & Test Data
+SUBMISSION_WRITEUP.md
+VIDEO_PRESENTATION_SCRIPT.md
+MASTER_PROJECT_SPEC.md
+DEPLOYMENT.md
+test-data/
+check_*.py
